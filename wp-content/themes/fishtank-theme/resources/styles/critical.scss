@@ -1,9 +1,0 @@
-/* 
-* Include all global styling and any styling needed for first load i.e. header.scss, navigation.scss + hero.scss
-*/
-
-@forward 'common';
-@forward 'common/reset';
-
-@forward 'sections/header';
-@forward 'sections/navigation';
