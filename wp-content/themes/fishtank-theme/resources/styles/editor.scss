@@ -1,0 +1,18 @@
+@forward 'common/reset';
+
+// load css inside acfe preview section ONLY
+@use 'sass:meta';
+
+.editor-styles-wrapper {
+	@include meta.load-css('common');
+
+	/* include sections here */
+	@include meta.load-css('sections/forms');
+
+	/* used as a container class for gutenberg editor */
+	&.block-editor-writing-flow {
+		width: 100%;
+		max-width: calc(100% - 60px);
+		margin: auto;
+	}
+}

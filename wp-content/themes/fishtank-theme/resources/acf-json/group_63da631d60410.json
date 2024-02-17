@@ -1,0 +1,288 @@
+{
+	"key": "group_63da631d60410",
+	"title": "Theme Settings",
+	"fields": [
+		{
+			"key": "field_63ff8d334088e",
+			"label": "Company Information",
+			"name": "",
+			"aria-label": "",
+			"type": "tab",
+			"instructions": "",
+			"required": 0,
+			"conditional_logic": 0,
+			"wrapper": {
+				"width": "",
+				"class": "",
+				"id": ""
+			},
+			"placement": "left",
+			"endpoint": 0
+		},
+		{
+			"key": "field_631878b855bd2",
+			"label": "Socials",
+			"name": "socials",
+			"aria-label": "",
+			"type": "repeater",
+			"instructions": "",
+			"required": 0,
+			"conditional_logic": 0,
+			"wrapper": {
+				"width": "",
+				"class": "",
+				"id": ""
+			},
+			"collapsed": "",
+			"min": 0,
+			"max": 0,
+			"layout": "table",
+			"button_label": "Add Social Link",
+			"rows_per_page": 20,
+			"acfe_repeater_stylised_button": 0,
+			"sub_fields": [
+				{
+					"key": "field_631878ee55bd4",
+					"label": "Social Link",
+					"name": "social_link",
+					"aria-label": "",
+					"type": "url",
+					"instructions": "",
+					"required": 1,
+					"conditional_logic": 0,
+					"wrapper": {
+						"width": "",
+						"class": "",
+						"id": ""
+					},
+					"default_value": "",
+					"placeholder": "",
+					"parent_repeater": "field_631878b855bd2"
+				},
+				{
+					"key": "field_6318790655bd5",
+					"label": "Social Icon",
+					"name": "social_icon",
+					"aria-label": "",
+					"type": "select",
+					"instructions": "",
+					"required": 1,
+					"conditional_logic": 0,
+					"wrapper": {
+						"width": "",
+						"class": "",
+						"id": ""
+					},
+					"choices": {
+						"linkedin": "LinkedIn",
+						"facebook": "Facebook",
+						"youtube": "YouTube",
+						"twitter": "Twitter",
+						"instagram": "Instagram"
+					},
+					"default_value": false,
+					"allow_null": 0,
+					"multiple": 0,
+					"ui": 0,
+					"return_format": "value",
+					"ajax": 0,
+					"placeholder": "",
+					"allow_custom": 0,
+					"search_placeholder": "",
+					"parent_repeater": "field_631878b855bd2"
+				}
+			]
+		},
+		{
+			"key": "field_6318798555bd6",
+			"label": "Contact Details",
+			"name": "contact_details",
+			"aria-label": "",
+			"type": "group",
+			"instructions": "",
+			"required": 0,
+			"conditional_logic": 0,
+			"wrapper": {
+				"width": "",
+				"class": "",
+				"id": ""
+			},
+			"layout": "block",
+			"acfe_seamless_style": 0,
+			"acfe_group_modal": 0,
+			"acfe_group_modal_close": 0,
+			"acfe_group_modal_button": "",
+			"acfe_group_modal_size": "large",
+			"sub_fields": [
+				{
+					"key": "field_6318798d55bd7",
+					"label": "Email",
+					"name": "email",
+					"aria-label": "",
+					"type": "email",
+					"instructions": "",
+					"required": 0,
+					"conditional_logic": 0,
+					"wrapper": {
+						"width": "",
+						"class": "",
+						"id": ""
+					},
+					"default_value": "",
+					"placeholder": "",
+					"prepend": "",
+					"append": ""
+				},
+				{
+					"key": "field_6318799d55bd8",
+					"label": "Telephone",
+					"name": "telephone",
+					"aria-label": "",
+					"type": "text",
+					"instructions": "",
+					"required": 0,
+					"conditional_logic": 0,
+					"wrapper": {
+						"width": "",
+						"class": "",
+						"id": ""
+					},
+					"default_value": "",
+					"placeholder": "",
+					"prepend": "",
+					"append": "",
+					"maxlength": ""
+				},
+				{
+					"key": "field_631879b355bd9",
+					"label": "Address",
+					"name": "address",
+					"aria-label": "",
+					"type": "group",
+					"instructions": "",
+					"required": 0,
+					"conditional_logic": 0,
+					"wrapper": {
+						"width": "",
+						"class": "",
+						"id": ""
+					},
+					"layout": "block",
+					"acfe_seamless_style": 0,
+					"acfe_group_modal": 0,
+					"acfe_group_modal_close": 0,
+					"acfe_group_modal_button": "",
+					"acfe_group_modal_size": "large",
+					"sub_fields": [
+						{
+							"key": "field_61d5a6090ec60",
+							"label": "House Name",
+							"name": "house_name",
+							"aria-label": "",
+							"type": "text",
+							"instructions": "",
+							"required": 0,
+							"conditional_logic": 0,
+							"wrapper": {
+								"width": "",
+								"class": "",
+								"id": ""
+							},
+							"default_value": "",
+							"placeholder": "",
+							"prepend": "",
+							"append": "",
+							"maxlength": ""
+						},
+						{
+							"key": "field_6231c2d8f2176",
+							"label": "Street Address",
+							"name": "street_address",
+							"aria-label": "",
+							"type": "text",
+							"instructions": "",
+							"required": 0,
+							"conditional_logic": 0,
+							"wrapper": {
+								"width": "",
+								"class": "",
+								"id": ""
+							},
+							"default_value": "",
+							"placeholder": "",
+							"prepend": "",
+							"append": "",
+							"maxlength": ""
+						},
+						{
+							"key": "field_61d5a6210ec62",
+							"label": "Address Region",
+							"name": "address_region",
+							"aria-label": "",
+							"type": "text",
+							"instructions": "",
+							"required": 0,
+							"conditional_logic": 0,
+							"wrapper": {
+								"width": "",
+								"class": "",
+								"id": ""
+							},
+							"default_value": "",
+							"placeholder": "",
+							"prepend": "",
+							"append": "",
+							"maxlength": ""
+						},
+						{
+							"key": "field_61d5a62a0ec63",
+							"label": "Postal Code",
+							"name": "postal_code",
+							"aria-label": "",
+							"type": "text",
+							"instructions": "",
+							"required": 0,
+							"conditional_logic": 0,
+							"wrapper": {
+								"width": "",
+								"class": "",
+								"id": ""
+							},
+							"default_value": "",
+							"placeholder": "",
+							"prepend": "",
+							"append": "",
+							"maxlength": ""
+						}
+					]
+				}
+			]
+		}
+	],
+	"location": [
+		[
+			{
+				"param": "options_page",
+				"operator": "==",
+				"value": "theme-settings"
+			}
+		]
+	],
+	"menu_order": 0,
+	"position": "normal",
+	"style": "default",
+	"label_placement": "left",
+	"instruction_placement": "label",
+	"hide_on_screen": "",
+	"active": true,
+	"description": "",
+	"show_in_rest": 0,
+	"acfe_display_title": "",
+	"acfe_autosync": [
+		"json"
+	],
+	"acfe_form": 0,
+	"acfe_meta": "",
+	"acfe_note": "",
+	"modified": 1677758094
+}

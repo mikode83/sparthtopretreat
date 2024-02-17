@@ -1,0 +1,49 @@
+{
+	"name": "plugins/installer",
+	"authors": [
+		{
+			"name": "fishtankmike",
+			"email": "mike@fishtankagency.com"
+		}
+	],
+	"repositories": [
+		{
+			"type": "composer",
+			"url": "https://wpackagist.org",
+			"only": [
+				"wpackagist-plugin/*",
+				"wpackagist-theme/*"
+			]
+		},
+		{
+			"type": "vcs",
+			"url": "git@github.com:fishtankdevs/advanced-custom-fields-pro.git"
+		},
+		{
+			"type": "vcs",
+			"url": "git@github.com:fishtankdevs/gravity-forms-pro.git"
+		}
+	],
+	"require": {
+		"fishtankdevs/advanced-custom-fields-pro": "^6.1.7",
+		"fishtankdevs/gravity-forms-pro": "^2.7.9",
+		"wpackagist-plugin/webp-express": "^0.25.6",
+		"wpackagist-plugin/wordpress-seo": "^21.5",
+		"wpackagist-plugin/wp-mail-smtp": "^3.8.0"
+	},
+	"extra": {
+		"installer-paths": {
+			"wp-content/plugins/{$name}/": [
+				"type:wordpress-plugin"
+			],
+			"wp-content/themes/{$name}/": [
+				"type:wordpress-theme"
+			]
+		}
+	},
+	"config": {
+		"allow-plugins": {
+			"composer/installers": true
+		}
+	}
+}

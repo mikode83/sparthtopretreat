@@ -1,0 +1,86 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/theme.json",
+	"version": 2,
+	"settings": {
+		"appearanceTools": false,
+		"border": {
+			"color": false,
+			"radius": false,
+			"style": false,
+			"width": false
+		},
+		"color": {
+			"text": false,
+			"background": false,
+			"link": false,
+			"custom": false,
+			"customDuotone": false,
+			"customGradient": false,
+			"defaultDuotone": false,
+			"defaultGradients": false,
+			"defaultPalette": false,
+			"palette": [
+				{
+					"slug": "primary",
+					"color": "#1A619D",
+					"name": "Primary"
+				},
+				{
+					"slug": "secondary",
+					"color": "#68B1A2",
+					"name": "Secondary"
+				},
+				{
+					"slug": "tertiary",
+					"color": "#F3F3F3",
+					"name": "Tertiary"
+				},
+				{
+					"slug": "light",
+					"color": "#ffffff",
+					"name": "Light"
+				},
+				{
+					"slug": "dark",
+					"color": "#050505",
+					"name": "Dark"
+				}
+			]
+		},
+		"spacing": {
+			"blockGap": null,
+			"margin": false,
+			"padding": false,
+			"units": [
+				"px"
+			]
+		},
+		"typography": {
+			"customFontSize": false,
+			"fontStyle": false,
+			"fontWeight": false,
+			"letterSpacing": false,
+			"lineHeight": false,
+			"textDecoration": false,
+			"textTransform": false,
+			"dropCap": false,
+			"fontSizes": [],
+			"fontFamilies": [
+				{
+					"fontFamily": "-apple-system,BlinkMacSystemFont,\"Segoe UI\",Roboto,Oxygen-Sans,Ubuntu,Cantarell,\"Helvetica Neue\",sans-serif",
+					"name": "System Font",
+					"slug": "system-font"
+				}
+			]
+		},
+		"layout": {
+			"contentSize": null,
+			"wideSize": null
+		}
+	},
+	"styles": {
+		"typography": {
+			"fontFamily": "var(--wp--preset--font-family--system-font)"
+		}
+	}
+}

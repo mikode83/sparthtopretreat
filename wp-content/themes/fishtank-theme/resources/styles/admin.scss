@@ -1,0 +1,154 @@
+@use 'utils' as *;
+
+@keyframes slideUp {
+	0% {
+		transform: translateY(100%);
+	}
+	100% {
+		transform: translateY(0);
+	}
+}
+
+body.login {
+	position: relative;
+	background-image: url(../images/login-pattern.svg);
+	background-size: cover;
+	background-position: center;
+	background-attachment: fixed;
+	display: flex;
+	align-items: center;
+	background-color: #fff;
+}
+
+body.login div#login {
+	width: 400px;
+	position: relative;
+	z-index: 1;
+	padding: 30px;
+	backdrop-filter: blur(5px);
+	animation: 0.4s ease-in-out 0s 1 slideUp;
+	box-shadow: 0 0 30px rgba(0, 0, 0, 0.1);
+	border: 1px solid #fafafa;
+	border-radius: 3px;
+	h1 {
+		margin-bottom: 20px;
+		height: 78px;
+		a {
+			pointer-events: none;
+			background-image: url('../images/login-logo.svg');
+			background-size: 154px 78px;
+			background-position: center top;
+			background-repeat: no-repeat;
+			color: #999;
+			height: 78px;
+			font-size: 20px;
+			font-weight: normal;
+			line-height: 1.3em;
+			margin: 0 auto 25px;
+			padding: 0;
+			text-decoration: none;
+			width: 154px;
+			text-indent: -9999px;
+			outline: none;
+			overflow: hidden;
+			display: inline-block;
+		}
+	}
+
+	#loginform,
+	#lostpasswordform,
+	#resetpassform {
+		border: none;
+		background-color: transparent;
+		padding: 0;
+		margin: 0;
+		box-shadow: none;
+
+		label {
+			display: block;
+			color: #999;
+			text-transform: uppercase;
+			font-size: 11px;
+			letter-spacing: 1px;
+		}
+
+		.forgetmenot {
+			label {
+				display: inline;
+			}
+		}
+
+		input {
+			border-radius: 0;
+
+			&[type='text'],
+			&[type='password'] {
+				padding: 10px;
+				box-shadow: none;
+				border: 2px solid #ddd;
+
+				&:focus {
+					border: 2px solid #add8e6;
+					outline: none !important;
+				}
+			}
+
+			&[type='submit'] {
+				background-color: #e64b38;
+			}
+
+			&[type='checkbox'] {
+				border: 2px solid #ddd;
+				width: 14px;
+				height: 14px;
+				box-sizing: content-box;
+				box-shadow: none;
+				color: #e64b38;
+
+				&:checked {
+					border: 2px solid #e64b38;
+				}
+			}
+		}
+
+		.button,
+		input[type='submit'] {
+			padding: 8px 24px;
+			text-transform: uppercase;
+			font-size: 12px;
+			letter-spacing: 1px;
+			border: 0;
+			outline: none;
+			box-shadow: none;
+			font-weight: 700;
+
+			&.wp-generate-pw {
+				background-color: #9e8f68;
+				color: #fff;
+				border-radius: 0;
+			}
+
+			&:hover {
+				opacity: 0.9;
+			}
+		}
+
+		.wp-hide-pw {
+			top: 7px;
+			color: #e64b38;
+			outline: none;
+			box-shadow: none;
+			border: none;
+			padding: 0;
+		}
+	}
+
+	#nav {
+		padding: 0;
+	}
+}
+
+body.login .language-switcher,
+body.login div#login p#backtoblog {
+	display: none;
+}
