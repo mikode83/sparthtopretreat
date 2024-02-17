@@ -16,20 +16,27 @@
 			]
 		},
 		{
-			"type": "vcs",
-			"url": "git@github.com:fishtankdevs/advanced-custom-fields-pro.git"
-		},
-		{
-			"type": "vcs",
-			"url": "git@github.com:fishtankdevs/gravity-forms-pro.git"
+			"type": "package",
+			"package": {
+				"name": "advanced-custom-fields/advanced-custom-fields-pro",
+				"version": "6.0.0",
+				"type": "wordpress-plugin",
+				"dist": {
+					"type": "zip",
+					"url": "https://connect.advancedcustomfields.com/index.php?a=download&p=pro&k=b3JkZXJfaWQ9MTA4MTAzfHR5cGU9ZGV2ZWxvcGVyfGRhdGU9MjAxNy0wNi0wOSAxMzo1MToyMg=="
+				},
+				"require": {
+					"ffraenz/private-composer-installer": "^5.0"
+				}
+			}
 		}
 	],
 	"require": {
-		"fishtankdevs/advanced-custom-fields-pro": "^6.1.7",
-		"fishtankdevs/gravity-forms-pro": "^2.7.9",
+		"advanced-custom-fields/advanced-custom-fields-pro": "^6.0.0",
 		"wpackagist-plugin/webp-express": "^0.25.6",
 		"wpackagist-plugin/wordpress-seo": "^21.5",
-		"wpackagist-plugin/wp-mail-smtp": "^3.8.0"
+		"wpackagist-plugin/wp-mail-smtp": "^3.8.0",
+		"wpackagist-plugin/classic-editor": "^1.6"
 	},
 	"extra": {
 		"installer-paths": {
@@ -43,7 +50,8 @@
 	},
 	"config": {
 		"allow-plugins": {
-			"composer/installers": true
+			"composer/installers": true,
+			"ffraenz/private-composer-installer": true
 		}
 	}
 }

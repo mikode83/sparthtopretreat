@@ -1,0 +1,97 @@
+input[type=text],
+input[type=date],
+input[type=tel],
+input[type=email],
+select,
+textarea {
+    padding: 15px;
+    width: 100%;
+    outline: none;
+    // border: 2px solid #333;
+    font-family: 'Forum', cursive;
+    font-size: 18px;
+    resize: none;
+
+    // border-radius: 255px 15px 225px 15px/15px 225px 15px 255px;
+    // border:solid 2px #41403E;
+}
+
+textarea {
+    height: 160px;
+}
+
+button {
+    &[type=submit] {
+
+    }
+}
+
+#booking-form {
+    padding: 40px;
+    background-color: lighten($primary, 40%);
+    // color: $light;
+    border-radius: 15px;
+
+    button {
+        background-color: $light;
+    }
+
+    // input,
+    // select,
+    // textarea {
+    //     color: $light;
+    //     border:solid 2px $light;
+    //     background-color: $primary;
+    //
+    //     &::placeholder {
+    //         color: $light;
+    //         opacity: 1; /* Firefox */
+    //     }
+    //
+    //     &:-ms-input-placeholder {
+    //         color: $light;
+    //     }
+    //
+    //     &::-ms-input-placeholder { /* Microsoft Edge */
+    //         color: $light;
+    //     }
+    //
+    //     &::-webkit-calendar-picker-indicator {
+    //         filter: invert(1);
+    //     }
+    // }
+}
+
+form {
+    .form-row {
+        margin-bottom: 40px;
+
+        &:last-child {
+            margin-bottom: 0;
+        }
+
+        &.halfer {
+            display: flex;
+            flex-flow: column;
+
+            .half {
+                margin-bottom: 15px;
+            }
+
+            label {
+                display: block;
+                font-weight: bold;
+                margin-bottom: 10px;
+            }
+
+            @include mobilefirst(680) {
+                flex-flow: row wrap;
+                justify-content: space-between;
+
+                .half {
+                    width: calc(50% - 20px);
+                }
+            }
+        }
+    }
+}

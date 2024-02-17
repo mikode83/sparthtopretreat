@@ -1,0 +1,51 @@
+/*------------------------------------*\
+    #BREAKPOINTS
+\*------------------------------------*/
+
+$bp-xs: 480;
+$bp-768: 768;
+$bp-991: 991;
+$bp-1024: 1024;
+$bp-1280: 1194;
+$bp-1400: 1366;
+$bp-1600: 1601;
+$bp-1900: 1900;
+
+/*------------------------------------*\
+    #COLOUR-VARIABLES
+\*------------------------------------*/
+
+/**
+  * One of the best reasons to use Sass is variables.
+  * They help keep your code DRY, which makes it easy to maintain and change.
+  * However, with colors, it's easy for your variables to get out of hand.
+  *
+  * Solution - Use Name that colour - http://bit.ly/1KCISUE
+  * Name your variables after colors like you were trying to do, but without the naming difficulty
+  * Suggestion by David Walsh - http://bit.ly/1I62ZLL
+*/
+
+$primary: #688489;
+$primary-light: lighten($primary, 40%);
+$primary-dark: darken($primary, 10%);
+
+$secondary: #000000;
+$dark: #333333;
+$light: #ffffff;
+$grey: #D9D9D9;
+
+$orange: #FF5800;
+$yellow: #FFC100;
+$purple: #A90075;
+$green: #00F889;
+$pink: #E30068;
+$darkGreen: #007843;
+
+
+
+/*------------------------------------*\
+    #FONT-FAMILIES
+\*------------------------------------*/
+
+$rel-reg: 'Relative';
+$rel-book: 'Relative Book';

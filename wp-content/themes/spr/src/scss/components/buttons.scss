@@ -1,0 +1,29 @@
+.btn {
+    font-family: 'Forum', cursive;
+    display: inline-flex;
+    background: transparent;
+    padding: 0 20px;
+    transition: all .5s ease;
+    color: #41403E;
+    font-size: 18px;
+    line-height: 50px;
+    letter-spacing: 1px;
+    outline: none;
+    box-shadow: 20px 38px 34px -26px hsla(0,0%,0%,.2);
+    border-radius: 255px 15px 225px 15px/15px 225px 15px 255px;
+    border:solid 2px #41403E;
+    font-weight: bold;
+    position: relative;
+    z-index: 15;
+
+    margin-right: 15px;
+
+    &:hover{
+        box-shadow:2px 8px 4px -6px hsla(0,0%,0%,.3);
+    }
+
+    &.btn__alt {
+        color: $light;
+        border:solid 2px $light;
+    }
+}

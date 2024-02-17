@@ -1,0 +1,121 @@
+#hp-header {
+    .jarallax {
+        display: none;
+    }
+    .non-jarallax {
+        display: block;
+    }
+
+    @include mobilefirst(769) {
+        .jarallax {
+            display: block;
+        }
+        .non-jarallax {
+            display: none;
+        }
+    }
+}
+#hp-intro {
+    .intro {
+        display: flex;
+        flex-flow: column;
+        position: relative;
+
+        &:before,
+        &:after {
+            content: '';
+            position: absolute;
+            background-color: $light;
+            height: 40px;
+            width: 100%;
+            left: 0;
+            z-index: 1;
+
+            @include mobilefirst(900) {
+                height: 55px;
+            }
+        }
+
+        &:before{
+            bottom: calc(100% - 2px);
+            border-top-left-radius: 10px;
+            border-top-right-radius: 10px;
+        }
+
+        &:after{
+            top: calc(100% - 2px);
+            border-bottom-left-radius: 10px;
+            border-bottom-right-radius: 10px;
+        }
+
+        @include mobilefirst(900) {
+            flex-flow: row wrap;
+            justify-content: space-between;
+        }
+
+        // @include mobilefirst(1200) {
+        //     padding-top: 40px;
+        //     padding-bottom: 40px;
+        // }
+
+        &__text,
+        &__image {
+            background-color: $light;
+            position: relative;
+
+            @include mobilefirst(1200) {
+                width:50%;
+            }
+
+            .hp__scroller {
+                img {
+                    border-radius: 5px;
+                }
+            }
+        }
+
+        &__text {
+            padding: 0 20px;
+
+            @include mobilefirst(1200) {
+                padding: 0 40px;
+            }
+        }
+        &__image {
+            padding: 0 20px;
+
+            @include mobilefirst(1200) {
+                padding: 0 40px 0 0;
+            }
+        }
+    }
+}
+
+#hp-continued {
+    background-color: $primary-light;
+    // color: $light;
+    overflow: hidden;
+    position: relative;
+
+    svg {
+        width: 40%;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translateY(-50%);
+        z-index: 0;
+        opacity: 0.1;
+
+    }
+
+    .additional_content {
+        position: relative;
+
+        &__text {
+
+            @include mobilefirst(900) {
+                width: 60%;
+            }
+        }
+    }
+}

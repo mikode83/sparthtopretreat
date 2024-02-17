@@ -1,0 +1,254 @@
+body {
+    transition: .4s ease-out;
+    main,header {
+        transition: .4s ease-out;
+    }
+    &.nav-active {
+        overflow: hidden;
+        background-color: $dark;
+
+        main,header {
+            opacity: 0.2;
+            transform: translateX(-200px);
+        }
+        main {
+            background-color: $dark;
+        }
+    }
+}
+
+nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    width: 100%;
+    font-family: 'Forum', cursive;
+    z-index: 500;
+    transition: background-color .5s ease-in-out;
+
+    @include mobilefirst(1100) {
+        padding: 15px 40px;
+    }
+
+    @include mobilefirst(1400) {
+            padding: 15px 80px;
+    }
+    // background-color: $light
+
+    .logo {
+        display: flex;
+        align-items: center;
+        font-size: 18px;
+        line-height: 22px;
+        color: #FFF;
+
+        @include mobilefirst(1100) {
+            font-size: 24px;
+            line-height: 30px;
+        }
+
+        span {
+            margin-right: 20px;
+        }
+
+        svg {
+            width: 40px;
+
+            @include mobilefirst(1100) {
+                width: 60px;
+            }
+
+            path {
+                fill: #FFF;
+                transition: fill .2s ease-in-out;
+            }
+        }
+    }
+
+    ul  {
+        display: flex;
+        align-items: center;
+        font-size: 20px;
+        line-height: 22px;
+
+        li {
+            margin-left: 40px;
+
+            &.btn-a {
+                a {
+                    @extend .btn;
+                    color: #FFF !important;
+                    border-color: $light !important;
+                    &:after {
+                        display: none;
+                    }
+                }
+            }
+
+            a {
+                color: #FFF;
+                transition: color .2s ease-in-out;
+                position: relative;
+
+                &:after {
+                    content: '';
+                    position: absolute;
+                    bottom: -5px;
+                    left: 0;
+                    height: 1px;
+                    width: 0;
+                    transition: width .2s ease-in-out;
+                    background-color: #FFF;
+                }
+
+                &:hover {
+                    &:after {
+                        width: 100%;
+                    }
+                }
+            }
+
+            &.current-menu-item {
+                a {
+                    &:after {
+                        width: 100%;
+                    }
+                }
+            }
+        }
+    }
+
+    @include responsive(1100) {
+        ul {
+            position: fixed;
+            top: 0;
+            right: 0;
+            height: 100vh;
+            width: 100%;
+            transform: translateX(100%);
+            z-index: 800;
+            transition: transform .6s ease-out;
+            padding: 100px 40px 40px;
+            flex-flow: column;
+            justify-content: center;
+            background-color: $light;
+
+
+            li {
+                font-size: 30px;
+                font-weight: 700;
+                a {
+                    color: $dark;
+                    padding: 15px 0;
+                    display: inline-block;
+                }
+                &.btn-a {
+                    display: none;
+                }
+            }
+
+            &.active {
+                box-shadow: 0 0 20px rgba(100, 100, 100, 0.8);
+                transform: translateX(0);
+            }
+        }
+    }
+
+    .burger {
+        display: block;
+        position: fixed;
+        top: 0;
+        right: 0;
+        padding: 10px 20px;
+        z-index: 900;
+        border: none;
+        outline: none;
+        background-color: transparent;
+        appearance: none;
+
+        @include mobilefirst(1100) {
+            display: none;
+        }
+
+        .bun {
+            width: 42px;
+            height: 45px;
+            display: flex;
+            align-items: center;
+        }
+
+        .close {
+            display: none;
+        }
+
+        &.active {
+            .bun { display: none; }
+            .close {
+                display: block;
+
+                    svg {
+                        path {
+                            fill: $dark !important;
+                        }
+                    }
+            }
+        }
+
+        span {
+            svg {
+                path {
+                    fill: $light;
+                }
+                width: 35px;
+                height: 35px
+            }
+        }
+    }
+
+    &.stuck {
+        background-color: $light;
+        box-shadow: 0 0 20px rgba($dark, 0.1);
+
+        .logo {
+            color: $dark;
+            svg {
+                path {
+                    fill: $dark;
+                }
+            }
+        }
+
+        ul {
+            li {
+                a {
+                    color: $dark;
+                    &:after {
+                        background-color: $dark;
+                    }
+                }
+                &.btn-a {
+                    a {
+                        @extend .btn;
+                        color: $dark !important;
+                        border-color: $dark !important;
+                    }
+                }
+            }
+        }
+
+        .burger {
+            span {
+                svg {
+                    path {
+                        fill: $dark;
+                    }
+                }
+            }
+        }
+    }
+}

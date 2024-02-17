@@ -1,0 +1,11 @@
+.container {
+    width: 1200px;
+    max-width: calc(100% - 80px);
+    margin-left: auto;
+    margin-right: auto;
+
+    @include mobilefirst(1000) {
+        max-width: calc(100% - 160px);
+
+    }
+}

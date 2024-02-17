@@ -1,0 +1,181 @@
+@mixin vertical-align {
+    position: absolute;
+    top: 50%;
+    -webkit-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+}
+
+@mixin horizontal-align {
+    position: absolute;
+    left: 50%;
+    -webkit-transform: translateX(-50%);
+    -ms-transform: translateX(-50%);
+    transform: translateX(-50%);
+}
+
+@mixin centre {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+}
+
+@mixin input-placeholder {
+    &.placeholder {
+        @content;
+    }
+    &:-moz-placeholder {
+        @content;
+    }
+    &::-moz-placeholder {
+        @content;
+    }
+    &:-ms-input-placeholder {
+        @content;
+    }
+    &::-webkit-input-placeholder {
+        @content;
+    }
+}
+
+@mixin linear-gradient($from, $to) {
+    // Fallback for sad browsers
+    background-color: $to;
+    // Mozilla Firefox
+    background-image: -moz-linear-gradient($from, $to);
+    // Opera
+    background-image: -o-linear-gradient($from, $to);
+    // Webkit (Safari 4+, Chrome 1+)
+    background-image: -webkit-gradient(
+        linear,
+        left top,
+        left bottom,
+        color-stop(0, $from),
+        color-stop(1, $to)
+    );
+    // Webkit (Chrome 11+)
+    background-image: -webkit-linear-gradient($from, $to);
+    // IE 10
+    background-image: -ms-linear-gradient($from, $to);
+    // W3C
+    background-image: linear-gradient($from, $to);
+}
+
+/**
+  * Clear after floats
+*/
+
+@mixin clearfix {
+    zoom: 1;
+    &:before,
+    &:after {
+        content: '\0020';
+        display: block;
+        height: 0;
+        overflow: hidden;
+    }
+    &:after {
+        clear: both;
+    }
+}
+
+/**
+  * Convert font-size from px to rem with px fallback
+  * @param $size - the value in pixel you want to convert
+  * Credit - http://bit.ly/1H7jo0n
+  * e.g. p { @include fontSize(12px); }
+*/
+
+@function calculateRem($size) {
+    $remSize: $size / 16px;
+    @return $remSize * 1rem;
+}
+
+/**
+  * Function for converting a px based font-size to rem.
+*/
+
+@mixin font-size($size) {
+    font-size: $size;
+    font-size: calculateRem($size);
+}
+
+/**
+  * Mixin that will include the fall back px declaration
+  * as well as the calculated rem value.
+*/
+
+@mixin line-height($size) {
+    line-height: $size;
+    line-height: calculateRem($size);
+}
+
+@mixin optional-at-root($sel) {
+    @at-root #{if(not &, $sel, selector-append(&, $sel))} {
+        @content;
+    }
+}
+
+/**
+  * Apply clearfix to this classes by default
+*/
+
+.clear,
+.group {
+    @include clearfix;
+}
+
+/**
+* Responsive mixins
+*/
+
+
+@mixin responsive($res) {
+
+    @if (unitless($res)) { $res: #{$res}px; }
+
+    @media screen and (max-width: $res) {
+        @content;
+    }
+}
+
+@mixin responsive-height-laptop($res) {
+
+    @if (unitless($res)) { $res: #{$res}px; }
+
+    @media screen and (max-height: $res) and (orientation: landscape) {
+        @content;
+    }
+}
+
+@mixin mobilefirst($res) {
+
+    @if (unitless($res)) { $res: #{$res}px; }
+
+    @media screen and (min-width: $res) {
+        @content;
+    }
+}
+
+@mixin mobilefirst-width-height($width, $height) {
+
+    @if (unitless($width)) { $width: #{$width}px; }
+    @if (unitless($height)) { $height: #{$height}px; }
+
+    @media screen and (min-width: $width) and (min-height: $height) {
+        @content;
+    }
+}
+
+@mixin mobilefirst-between($start, $end) {
+
+    @if (unitless($start)) { $start: #{$start}px; }
+    @if (unitless($end)) { $end: #{$end}px; }
+
+    @media screen and (min-width: $start) and (max-width : $end) {
+        @content;
+    }
+}
